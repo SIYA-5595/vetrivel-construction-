@@ -22,7 +22,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vetrivel Constructions — Premium Builders in Chennai" },
+      { title: "Vetrivel Constructions — Premium Builders in Thoothukudi" },
       {
         name: "description",
         content:
@@ -93,8 +93,8 @@ function AboutSection() {
         </h2>
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">
           Vetrivel Constructions was founded on a simple promise — every structure we build
-          should outlast the people who built it. From bespoke villas on ECR to grade-A
-          office towers in the city, our work is defined by structural rigour, design
+          should outlast the people who built it. From bespoke villas to grade-A
+          office towers, our work is defined by structural rigour, design
           discipline and the unwavering trust of the families and brands we serve.
         </p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">

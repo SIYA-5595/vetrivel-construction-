@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vetrivel Constructions — Premium Builders in Chennai" },
+      { title: "Vetrivel Constructions — Premium Builders in Thoothukudi" },
       {
         name: "description",
         content:

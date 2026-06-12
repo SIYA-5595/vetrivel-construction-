@@ -42,7 +42,7 @@ export function HeroSlider() {
         <div key={index} className="max-w-3xl animate-fade-up text-center sm:text-left">
           <span className="eyebrow">
             <span className="h-px w-8 bg-gold" />
-            Premium Construction Since 2002
+            Premium Construction Since 2015
           </span>
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-7xl">
             {SITE.name.split(" ")[0].toUpperCase()}

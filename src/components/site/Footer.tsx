@@ -96,10 +96,18 @@ export function Footer() {
               {SITE.address}
             </li>
             <li className="flex gap-3 text-sm text-white/65">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-              <a href={`tel:${SITE.phoneRaw}`} className="hover:text-gold">
-                {SITE.phoneDisplay}
-              </a>
+              <Phone className="mt-1 h-4 w-4 shrink-0 text-gold" />
+              <div className="flex flex-col gap-1">
+                {(SITE as any).phoneNumbers.map((phone: string) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.replace(/\s+/g, "")}`}
+                    className="hover:text-gold"
+                  >
+                    {phone}
+                  </a>
+                ))}
+              </div>
             </li>
             <li className="flex gap-3 text-sm text-white/65">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />

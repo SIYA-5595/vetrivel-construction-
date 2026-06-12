@@ -14,11 +14,12 @@ import p6 from "@/assets/project-6.jpg";
 export const SITE = {
   name: "Vetrivel Constructions",
   tagline: "Trust is the base of our Business",
-  phoneDisplay: "+91 86439 93333",
-  phoneRaw: "+918643993333",
-  whatsappRaw: "918643993333",
-  email: "info@vetrivelconstructions.com",
-  address: "No. 24, Anna Salai, Chennai, Tamil Nadu 600002, India",
+  phoneDisplay: "+91 94427 69333",
+  phoneRaw: "+91 9442769333",
+  phoneNumbers: ["+91 94427 69333", "+91 94427 79333", "+91 86439 99333"],
+  whatsappRaw: "91 9442769333",
+  email: "vetrivelconsultancy@gmail.com",
+  address: "1G/892, Rajagopal Nagar 4th Street (West), Thoothukudi - 628 008",
   hours: "Mon – Sat · 9:00 AM – 7:00 PM",
   social: {
     facebook: "#",

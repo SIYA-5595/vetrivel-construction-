@@ -49,9 +49,17 @@ function ContactPage() {
                 {SITE.address}
               </ContactRow>
               <ContactRow Icon={Phone} label="Call us">
-                <a href={`tel:${SITE.phoneRaw}`} className="hover:text-gold">
-                  {SITE.phoneDisplay}
-                </a>
+                <div className="flex flex-col gap-1">
+                  {(SITE as any).phoneNumbers.map((phone: string) => (
+                    <a
+                      key={phone}
+                      href={`tel:${phone.replace(/\s+/g, "")}`}
+                      className="hover:text-gold"
+                    >
+                      {phone}
+                    </a>
+                  ))}
+                </div>
               </ContactRow>
               <ContactRow Icon={Mail} label="Email">
                 <a href={`mailto:${SITE.email}`} className="hover:text-gold">
@@ -135,7 +143,7 @@ function ContactPage() {
           <div className="overflow-hidden rounded-sm border border-border">
             <iframe
               title="Vetrivel Constructions location"
-              src="https://www.google.com/maps?q=Anna%20Salai%20Chennai&output=embed"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[420px] w-full"

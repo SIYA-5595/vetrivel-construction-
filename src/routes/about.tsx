@@ -41,7 +41,7 @@ const TEAM = [
 ];
 
 const TIMELINE = [
-  { year: "2002", title: "Founded in Chennai", text: "Began with a single residential project on a 2,400 sqft plot in Adyar." },
+  { year: "2002", title: "Founded", text: "Began with a single residential project on a 2,400 sqft plot." },
   { year: "2008", title: "First commercial tower", text: "Delivered a 6-storey office building on Mount Road, ahead of schedule." },
   { year: "2014", title: "ISO 9001 certified", text: "Formalised our quality management system across all sites." },
   { year: "2019", title: "100th project delivered", text: "Crossed 100 completed projects spanning four states." },
@@ -195,7 +195,7 @@ function AboutPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">Our Journey</span>
             <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
-              From one project in Adyar to 250+ across South India.
+              From our first project to 250+ across South India.
             </h2>
           </div>
           <ol className="relative mx-auto mt-14 max-w-3xl border-l-2 border-gold/40">
