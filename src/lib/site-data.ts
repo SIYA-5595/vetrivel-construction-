@@ -4,12 +4,21 @@ import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import hero5 from "@/assets/hero-5.jpg";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
-import p4 from "@/assets/project-4.jpg";
-import p5 from "@/assets/project-5.jpg";
-import p6 from "@/assets/project-6.jpg";
+import p1 from "@/assets/project-new-1.png";
+import p2 from "@/assets/project-new-2.png";
+import p3 from "@/assets/project-new-3.jpg";
+import p4 from "@/assets/project-new-4.jpg";
+import p5 from "@/assets/project-new-5.jpg";
+import p6 from "@/assets/project-new-6.jpg";
+import p7 from "@/assets/project-new-7.jpg";
+import p8 from "@/assets/project-new-8.png";
+
+import s1 from "@/assets/project-1.jpg";
+import s2 from "@/assets/project-2.jpg";
+import s3 from "@/assets/project-3.jpg";
+import s4 from "@/assets/project-4.jpg";
+import s5 from "@/assets/project-5.jpg";
+import s6 from "@/assets/project-6.jpg";
 
 export const SITE = {
   name: "Vetrivel Constructions",
@@ -20,7 +29,7 @@ export const SITE = {
   whatsappRaw: "91 9442769333",
   email: "vetrivelconsultancy@gmail.com",
   address: "1G/892, Rajagopal Nagar 4th Street (West), Thoothukudi - 628 008",
-  hours: "Mon – Sat · 9:00 AM – 7:00 PM",
+  hours: "Mon – Sat · 9:00 AM – 9:00 PM",
   social: {
     facebook: "#",
     instagram: "#",
@@ -155,7 +164,7 @@ export const SERVICES: Service[] = [
       "Up to 36 months of free service",
       "Transparent weekly progress reports",
     ],
-    image: p3,
+    image: s1,
   },
   {
     slug: "commercial-construction",
@@ -177,7 +186,7 @@ export const SERVICES: Service[] = [
       "Lower operating cost over lifecycle",
       "Single point of accountability",
     ],
-    image: p2,
+    image: s2,
   },
   {
     slug: "villa-construction",
@@ -199,7 +208,7 @@ export const SERVICES: Service[] = [
       "Curated material library",
       "End-to-end interiors",
     ],
-    image: p3,
+    image: s3,
   },
   {
     slug: "interior-design",
@@ -221,7 +230,7 @@ export const SERVICES: Service[] = [
       "Lifetime hardware warranty",
       "On-time room-by-room handover",
     ],
-    image: p6,
+    image: s4,
   },
   {
     slug: "renovation",
@@ -243,7 +252,7 @@ export const SERVICES: Service[] = [
       "Fixed timeline & cost",
       "Insurance-backed workmanship",
     ],
-    image: p1,
+    image: s5,
   },
   {
     slug: "turnkey-projects",
@@ -265,7 +274,7 @@ export const SERVICES: Service[] = [
       "Faster delivery vs. multi-vendor",
       "Move-in ready handover",
     ],
-    image: p4,
+    image: s6,
   },
 ];
 
@@ -297,8 +306,8 @@ export const PROJECTS: Project[] = [
     scope: "Design, Build & Interiors",
     description:
       "A landmark 12-storey residential tower of 96 premium apartments on Chennai's IT corridor. Delivered three weeks ahead of schedule with a tenant-ready amenities deck.",
-    image: p4,
-    gallery: [p4, p1, p2, p6],
+    image: p1,
+    gallery: [p1, p2, p3, p4],
   },
   {
     slug: "marina-corporate-tower",
@@ -313,7 +322,7 @@ export const PROJECTS: Project[] = [
     description:
       "A Grade-A office tower clad in unitised glass façade, anchored by a triple-height lobby and capable of housing 3,000 professionals across 15 floors.",
     image: p2,
-    gallery: [p2, p1, p4, p5],
+    gallery: [p2, p3, p4, p5],
   },
   {
     slug: "the-palms-villa",
@@ -328,7 +337,7 @@ export const PROJECTS: Project[] = [
     description:
       "A beachfront villa designed around an infinity pool — Italian marble, full home automation and landscaped gardens, handed over fully furnished.",
     image: p3,
-    gallery: [p3, p6, p1, p4],
+    gallery: [p3, p4, p5, p1],
   },
   {
     slug: "lumiere-penthouse",
@@ -342,8 +351,8 @@ export const PROJECTS: Project[] = [
     scope: "Interior Design & Execution",
     description:
       "A skyline-facing penthouse interior, balancing book-matched marble, oak veneers and ambient lighting across an open-plan layout.",
-    image: p1,
-    gallery: [p1, p6, p3, p4],
+    image: p4,
+    gallery: [p4, p5, p1, p2],
   },
   {
     slug: "northgate-logistics",
@@ -358,7 +367,7 @@ export const PROJECTS: Project[] = [
     description:
       "A pre-engineered warehouse facility with 14m clear height, dock-leveller loading bays and a Grade-A automation-ready floor plate.",
     image: p5,
-    gallery: [p5, p2, p4, p1],
+    gallery: [p5, p1, p2, p3],
   },
   {
     slug: "amaravati-villas",
@@ -372,8 +381,8 @@ export const PROJECTS: Project[] = [
     scope: "Master Plan + Build",
     description:
       "A gated enclave of twelve luxury villas, each individually designed yet unified by a coherent material palette and landscape language.",
-    image: p3,
-    gallery: [p3, p4, p6, p1],
+    image: p6,
+    gallery: [p6, p7, p8, p1],
   },
   {
     slug: "harmony-apartments",
@@ -387,8 +396,8 @@ export const PROJECTS: Project[] = [
     scope: "Construction",
     description:
       "A boutique residential project of 40 units, executed on a constrained urban site with zero neighbour complaints — a hallmark of our site discipline.",
-    image: p4,
-    gallery: [p4, p1, p6, p3],
+    image: p7,
+    gallery: [p7, p8, p1, p2],
   },
   {
     slug: "veridian-retail",
@@ -402,41 +411,29 @@ export const PROJECTS: Project[] = [
     scope: "Design–Build",
     description:
       "A mixed-use retail and office block with double-height storefronts, executed turn-key in 14 months including all tenant fit-outs.",
-    image: p2,
-    gallery: [p2, p5, p1, p4],
+    image: p8,
+    gallery: [p8, p1, p2, p3],
   },
 ];
 
 export const TESTIMONIALS = [
   {
-    name: "Ramesh Kumar",
-    role: "Homeowner, ECR Villa",
+    name: "Perumal.T",
+    role: "Founder & Managing Director",
     quote:
       "Vetrivel delivered our villa three weeks ahead of schedule, exactly on budget, and the finish quality is genuinely better than what we'd seen in show homes. Rare in this industry.",
   },
   {
-    name: "Priya Subramanian",
-    role: "Managing Director, Marina Holdings",
+    name: "Iyyappan.P",
+    role: "Purchasing Manager",
     quote:
       "We've worked with five contractors in twenty years. None match Vetrivel for site discipline, weekly reporting transparency, and the calibre of their senior project leads.",
-  },
-  {
-    name: "Arjun Iyer",
-    role: "Director, Skyline Developers",
-    quote:
-      "A 12-storey tower handed over with a snag list of fewer than ten items per floor. That's the kind of execution that lets us sell at a premium.",
-  },
-  {
-    name: "Lakshmi Narayanan",
-    role: "Homeowner, Nungambakkam",
-    quote:
-      "From the first sketch to the final touch-up, the same project manager stayed with us. The interiors team understood our taste better than we did.",
   },
 ];
 
 export const STATS = [
-  { value: 250, suffix: "+", label: "Projects Completed" },
-  { value: 1800, suffix: "+", label: "Happy Clients" },
-  { value: 22, suffix: "", label: "Years of Experience" },
+  { value: 150, suffix: "+", label: "Projects Completed" },
+  { value: 1000, suffix: "+", label: "Happy Clients" },
+  { value: 11, suffix: "", label: "Years of Experience" },
   { value: 140, suffix: "+", label: "Team Members" },
 ];

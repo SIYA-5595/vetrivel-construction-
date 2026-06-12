@@ -4,7 +4,14 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { LOGO_URL, SITE } from "@/lib/site-data";
 
+import { z } from "zod";
+
+const contactSearchSchema = z.object({
+  package: z.string().optional(),
+});
+
 export const Route = createFileRoute("/contact")({
+  validateSearch: contactSearchSchema,
   head: () => ({
     meta: [
       { title: "Contact — Vetrivel Constructions" },
@@ -19,7 +26,13 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const { package: selectedPackage } = Route.useSearch();
   const [submitted, setSubmitted] = useState(false);
+
+  // Initial message text if a package is selected
+  const initialMessage = selectedPackage 
+    ? `I am interested in the ${selectedPackage} package. Please provide more details/quote.`
+    : "";
 
   return (
     <>
@@ -115,7 +128,11 @@ function ContactPage() {
                   <Field label="Phone Number" name="phone" type="tel" required />
                 </div>
                 <Field label="Email Address" name="email" type="email" required />
-                <Field label="Project Type / Location" name="subject" />
+                <Field 
+                  label="Project Type / Location" 
+                  name="subject" 
+                  defaultValue={selectedPackage ? `${selectedPackage} Package Enquiry` : ""}
+                />
                 <div>
                   <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                     Message
@@ -124,6 +141,7 @@ function ContactPage() {
                     name="message"
                     rows={5}
                     required
+                    defaultValue={initialMessage}
                     className="mt-2 w-full rounded-sm border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-gold"
                     placeholder="Tell us about your plot, scope and budget…"
                   />
@@ -184,11 +202,13 @@ function Field({
   name,
   type = "text",
   required,
+  defaultValue,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  defaultValue?: string;
 }) {
   return (
     <div>
@@ -200,6 +220,7 @@ function Field({
         name={name}
         type={type}
         required={required}
+        defaultValue={defaultValue}
         className="mt-2 w-full rounded-sm border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-gold"
       />
     </div>

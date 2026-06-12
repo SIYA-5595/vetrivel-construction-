@@ -3,7 +3,7 @@ import { Compass, Eye, Flag, Heart, ShieldCheck, Target } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { CTASection } from "@/components/site/CTASection";
 import { Counter } from "@/components/site/Counter";
-import { STATS } from "@/lib/site-data";
+import { STATS, TESTIMONIALS } from "@/lib/site-data";
 import p1 from "@/assets/project-1.jpg";
 import p3 from "@/assets/project-3.jpg";
 
@@ -34,18 +34,16 @@ const VALUES = [
 ];
 
 const TEAM = [
-  { name: "S. Vetrivelan", role: "Founder & Managing Director", initials: "SV" },
-  { name: "K. Arjun Murthy", role: "Director — Operations", initials: "AM" },
-  { name: "Dr. R. Indira", role: "Chief Architect", initials: "RI" },
-  { name: "P. Sundaram", role: "Head of Engineering", initials: "PS" },
-];
+  { name: "Perumal.T", role: "Founder & Managing Director", initials: "PT" },
+  { name: "Iyyappan.P", role: "Purchasing Manager", initials: "IP" }, 
+]
 
 const TIMELINE = [
-  { year: "2002", title: "Founded", text: "Began with a single residential project on a 2,400 sqft plot." },
-  { year: "2008", title: "First commercial tower", text: "Delivered a 6-storey office building on Mount Road, ahead of schedule." },
-  { year: "2014", title: "ISO 9001 certified", text: "Formalised our quality management system across all sites." },
-  { year: "2019", title: "100th project delivered", text: "Crossed 100 completed projects spanning four states." },
-  { year: "2024", title: "Scaling beyond South India", text: "Opened a second regional office and launched our turn-key interior studio." },
+  { year: "2015", title: "Founded", text: "Started with a small residential project on a modest plot. A humble beginning with a vision to deliver quality homes." },
+  { year: "2018", title: "Early Growth", text: "Completed multiple residential projects and started building strong client trust through quality and timely delivery." },
+  { year: "2020", title: "Expansion Stage", text: "Moved into larger residential and small commercial projects with improved team strength and better execution capacity." },
+  { year: "2022", title: "Strong Reputation", text: "Became a trusted name in the region with consistent project delivery and increasing client referrals." },
+  { year: "2024", title: "Established Brand", text: "Recognized as a growing construction company with a strong portfolio across residential and commercial projects, focusing on quality, trust, and innovation." },
 ];
 
 function AboutPage() {
@@ -66,11 +64,10 @@ function AboutPage() {
             A construction company built on engineering rigour and quiet conviction.
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            Since 2002, Vetrivel Constructions has delivered over 250 projects — from
-            bespoke beachfront villas to grade-A office towers — across Tamil Nadu,
-            Karnataka and Andhra Pradesh. Our work is led by senior project managers with
-            an average of 18 years of site experience, and audited by an independent
-            quality cell that reports directly to the managing director.
+            Since 2015, Vetrivel Constructions has been delivering trusted construction solutions with 
+            a strong focus on quality,innovation, and customer satisfaction. From planning and approvals to structural design,
+            interiors, and project execution, we ensure every project is completed with precision, professionalism, and uncompromising standards. Our commitment to excellence enables us to create durable, functional, and aesthetically refined spaces that stand the test of time.
+
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
             We don't pursue volume. We pursue projects we can stand behind, and clients we
@@ -84,7 +81,7 @@ function AboutPage() {
             className="aspect-[4/5] w-full rounded-sm object-cover"
           />
           <div className="absolute bottom-6 left-6 right-6 rounded-sm bg-ink/90 p-6 text-white backdrop-blur">
-            <div className="font-display text-3xl font-bold text-gold">22 Years</div>
+            <div className="font-display text-3xl font-bold text-gold">11 Years</div>
             <div className="mt-1 text-sm text-white/70">
               of building South India's landmarks
             </div>
@@ -171,7 +168,7 @@ function AboutPage() {
             The team behind every blueprint.
           </h2>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {TEAM.map((m) => (
             <div
               key={m.name}
@@ -187,6 +184,27 @@ function AboutPage() {
             </div>
           ))}
         </div>
+
+        {/* Leadership Statements */}
+        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+          {TESTIMONIALS.map((t) => (
+            <div key={t.name} className="relative rounded-sm border border-gold/20 bg-gold/5 p-10">
+              <span className="absolute -top-4 left-10 scale-150 text-6xl text-gold/20 font-serif">“</span>
+              <blockquote className="relative font-display text-lg italic leading-relaxed text-ink">
+                {t.quote}
+              </blockquote>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="h-px w-8 bg-gold" />
+                <div>
+                  <div className="font-bold text-ink">{t.name}</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    {t.role}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Timeline */}
@@ -195,7 +213,7 @@ function AboutPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">Our Journey</span>
             <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
-              From our first project to 250+ across South India.
+              From our first project to 150+ across South India.
             </h2>
           </div>
           <ol className="relative mx-auto mt-14 max-w-3xl border-l-2 border-gold/40">

@@ -86,7 +86,7 @@ function PackageDetail() {
           <p className="mt-3 text-sm text-white/65">
             All-inclusive of materials, labour, supervision and standard finishes.
           </p>
-          <Link to="/contact" className="btn-gold mt-7 w-full">
+          <Link to="/contact" search={{ package: pkg.name }} className="btn-gold mt-7 w-full">
             Get Detailed Quote <ArrowRight className="h-4 w-4" />
           </Link>
           <div className="mt-6 space-y-3 text-sm text-white/70">
@@ -104,8 +104,8 @@ function PackageDetail() {
             {PACKAGES.filter((p) => p.slug !== pkg.slug).map((p) => (
               <Link
                 key={p.slug}
-                to="/packages/$slug"
-                params={{ slug: p.slug }}
+                to="/contact"
+                search={{ package: p.name }}
                 className="group rounded-sm border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-gold"
               >
                 <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
@@ -115,6 +115,9 @@ function PackageDetail() {
                   {p.name}
                 </h3>
                 <div className="mt-2 text-sm font-bold text-ink">{p.pricePerSqft}</div>
+                <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-gold opacity-0 transition-opacity group-hover:opacity-100">
+                  Get Quote →
+                </div>
               </Link>
             ))}
           </div>

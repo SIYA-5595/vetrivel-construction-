@@ -40,12 +40,12 @@ export const Route = createFileRoute("/")({
 });
 
 const REASONS = [
-  { Icon: ShieldCheck, title: "Quality Construction", text: "IS-code structures, branded materials, third-party quality audits at every milestone." },
-  { Icon: Clock, title: "On-Time Delivery", text: "Contractually guaranteed timelines, with weekly progress reports and milestone reviews." },
-  { Icon: HardHat, title: "Experienced Team", text: "140+ engineers, architects and craftsmen led by project managers averaging 18 years of experience." },
-  { Icon: BadgeCheck, title: "Transparent Pricing", text: "Fixed-price contracts with line-item BOQ. No hidden costs. No mid-project surprises." },
-  { Icon: HeartHandshake, title: "Customer Satisfaction", text: "1,800+ happy families. 92% of our clients refer us within their first year of moving in." },
-  { Icon: Sparkles, title: "Modern Technology", text: "BIM-led coordination, drone surveys, IoT-monitored sites and digital quality dashboards." },
+  { Icon: ShieldCheck, title: "Quality Construction", text: "We use IS-standard materials, branded products, and strict quality checks with third-party audits at every stage" },
+  { Icon: Clock, title: "On-Time Delivery", text: "We respect your time. Every project follows a strict timeline with weekly progress updates and milestone tracking" },
+  { Icon: HardHat, title: "Experienced Team", text: "A skilled team of architects, engineers, and craftsmen with 15+ years of real project experience ensures flawless execution." },
+  { Icon: BadgeCheck, title: "Transparent Pricing", text: "Clear BOQ-based pricing with no hidden charges. You always know what you are paying for." },
+  { Icon: HeartHandshake, title: "Customer Satisfaction", text: "We have successfully delivered homes to 2,500+ happy families. 95% of our clients refer us to their friends and family within the first year of moving in." },
+  { Icon: Sparkles, title: "Modern Technology", text: "We use advanced construction technology like BIM-based planning, drone site monitoring, IoT sensors for site safety, and digital dashboards to track quality and progress in real time." },
 ];
 
 function HomePage() {
@@ -54,11 +54,9 @@ function HomePage() {
       <HeroSlider />
       <AboutSection />
       <WhyChooseUs />
-      <PackagesSection />
       <ServicesSection />
       <FeaturedProjects />
       <StatsSection />
-      <TestimonialsSection />
       <RecentGallery />
       <CTASection />
     </>
@@ -76,7 +74,7 @@ function AboutSection() {
           className="aspect-[4/5] w-full rounded-sm object-cover"
         />
         <div className="absolute -bottom-8 -right-2 hidden w-64 rounded-sm bg-gold p-6 text-gold-foreground shadow-[var(--shadow-elegant)] sm:block">
-          <div className="font-display text-5xl font-bold leading-none">22+</div>
+          <div className="font-display text-5xl font-bold leading-none">11+</div>
           <div className="mt-2 text-sm font-semibold uppercase tracking-wider">
             Years of <br />
             Engineering Excellence
@@ -88,14 +86,13 @@ function AboutSection() {
           <span className="gold-rule" /> About the Company
         </span>
         <h2 className="mt-5 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-          Two decades of building landmarks that
+          A decade of building quality spaces with trust and excellence.
           <span className="text-gold"> stand the test of time.</span>
         </h2>
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-          Vetrivel Constructions was founded on a simple promise — every structure we build
-          should outlast the people who built it. From bespoke villas to grade-A
-          office towers, our work is defined by structural rigour, design
-          discipline and the unwavering trust of the families and brands we serve.
+          Vetrivel Constructions has been delivering trusted construction solutions with a focus on quality,
+          innovation, and customer satisfaction. From residential homes to commercial projects, 
+          our work is driven by strong engineering, thoughtful design, and a commitment to excellence.
         </p>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {[
@@ -159,65 +156,7 @@ function WhyChooseUs() {
   );
 }
 
-/* Packages */
-function PackagesSection() {
-  return (
-    <section className="py-24 lg:py-32">
-      <div className="container-x">
-        <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Construction Packages</span>
-            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-              Four ways to build the home you've imagined.
-            </h2>
-          </div>
-          <Link to="/packages" className="btn-ink">
-            All Packages <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {PACKAGES.map((p, i) => (
-            <Link
-              key={p.slug}
-              to="/packages/$slug"
-              params={{ slug: p.slug }}
-              className={`group relative flex flex-col rounded-sm border p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)] ${
-                i === 2
-                  ? "border-gold bg-ink text-ink-foreground shadow-[var(--shadow-elegant)]"
-                  : "border-border bg-card"
-              }`}
-            >
-              {i === 2 && (
-                <span className="absolute -top-3 left-7 rounded-sm bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold-foreground">
-                  Most chosen
-                </span>
-              )}
-              <span className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${i === 2 ? "text-gold" : "text-gold"}`}>
-                {p.tier}
-              </span>
-              <h3 className={`mt-3 font-display text-2xl font-bold ${i === 2 ? "text-white" : ""}`}>
-                {p.name}
-              </h3>
-              <p className={`mt-3 text-sm ${i === 2 ? "text-white/70" : "text-muted-foreground"}`}>
-                {p.summary}
-              </p>
-              <div className={`mt-6 font-display text-3xl font-bold ${i === 2 ? "text-gold" : "text-ink"}`}>
-                {p.pricePerSqft}
-              </div>
-              <span
-                className={`mt-auto pt-6 text-sm font-semibold uppercase tracking-wider ${
-                  i === 2 ? "text-gold" : "text-ink"
-                } group-hover:text-gold`}
-              >
-                Explore Package →
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 /* Services */
 function ServicesSection() {
@@ -339,48 +278,6 @@ function StatsSection() {
             </div>
           </div>
         ))}
-      </div>
-    </section>
-  );
-}
-
-/* Testimonials */
-function TestimonialsSection() {
-  const [i, setI] = useState(0);
-  const t = TESTIMONIALS[i];
-  return (
-    <section className="bg-muted/40 py-24 lg:py-32">
-      <div className="container-x">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Client Voices</span>
-          <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Trust earned, one project at a time.
-          </h2>
-        </div>
-        <div className="mx-auto mt-14 max-w-3xl rounded-sm border border-border bg-card p-10 text-center shadow-[var(--shadow-card)]">
-          <Quote className="mx-auto h-10 w-10 text-gold" />
-          <blockquote className="mt-6 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
-            “{t.quote}”
-          </blockquote>
-          <div className="mt-8">
-            <div className="font-bold text-ink">{t.name}</div>
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">
-              {t.role}
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 flex justify-center gap-2">
-          {TESTIMONIALS.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setI(idx)}
-              aria-label={`Testimonial ${idx + 1}`}
-              className={`h-1 transition-all ${
-                idx === i ? "w-10 bg-gold" : "w-5 bg-ink/20 hover:bg-ink/40"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

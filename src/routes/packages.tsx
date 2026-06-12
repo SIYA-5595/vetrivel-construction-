@@ -68,13 +68,13 @@ function PackagesPage() {
                 ))}
               </ul>
               <Link
-                to="/packages/$slug"
-                params={{ slug: p.slug }}
+                to="/contact"
+                search={{ package: p.name }}
                 className={`mt-8 inline-flex items-center gap-2 self-start border-b text-sm font-semibold uppercase tracking-wider ${
                   i === 2 ? "border-gold text-gold" : "border-ink text-ink hover:border-gold hover:text-gold"
                 }`}
               >
-                View details <ArrowRight className="h-3.5 w-3.5" />
+                Get Quote <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </article>
           ))}
