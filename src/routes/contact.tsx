@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { LOGO_URL, SITE } from "@/lib/site-data";
@@ -30,7 +30,7 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   // Initial message text if a package is selected
-  const initialMessage = selectedPackage 
+  const initialMessage = selectedPackage
     ? `I am interested in the ${selectedPackage} package. Please provide more details/quote.`
     : "";
 
@@ -67,7 +67,8 @@ function ContactPage() {
                     <a
                       key={phone}
                       href={`tel:${phone.replace(/\s+/g, "")}`}
-                      className="hover:text-gold"
+                      aria-label={`Call ${phone}`}
+                      className="rounded-sm transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
                     >
                       {phone}
                     </a>
@@ -75,7 +76,11 @@ function ContactPage() {
                 </div>
               </ContactRow>
               <ContactRow Icon={Mail} label="Email">
-                <a href={`mailto:${SITE.email}`} className="hover:text-gold">
+                <a
+                  href={`mailto:${SITE.email}`}
+                  aria-label={`Email us at ${SITE.email}`}
+                  className="rounded-sm transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+                >
                   {SITE.email}
                 </a>
               </ContactRow>
@@ -83,23 +88,6 @@ function ContactPage() {
                 {SITE.hours}
               </ContactRow>
             </ul>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              <a href={`tel:${SITE.phoneRaw}`} className="btn-gold !px-3 !text-xs">
-                <Phone className="h-4 w-4" /> Call
-              </a>
-              <a href={`mailto:${SITE.email}`} className="btn-ghost-light !px-3 !text-xs">
-                <Mail className="h-4 w-4" /> Email
-              </a>
-              <a
-                href={`https://wa.me/${SITE.whatsappRaw}`}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ghost-light !px-3 !text-xs"
-              >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
-            </div>
           </aside>
 
           {/* Form */}
@@ -128,9 +116,9 @@ function ContactPage() {
                   <Field label="Phone Number" name="phone" type="tel" required />
                 </div>
                 <Field label="Email Address" name="email" type="email" required />
-                <Field 
-                  label="Project Type / Location" 
-                  name="subject" 
+                <Field
+                  label="Project Type / Location"
+                  name="subject"
                   defaultValue={selectedPackage ? `${selectedPackage} Package Enquiry` : ""}
                 />
                 <div>
