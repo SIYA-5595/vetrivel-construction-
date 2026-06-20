@@ -134,3 +134,15 @@
 
 @utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
 @utility animate-kenburns { animation: kenburns 12s ease-out both; }
+
+/* Protect logo images from dragging and text selection */
+img[src*="logo"],
+img[alt*="logo"],
+.site-logo {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
